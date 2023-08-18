@@ -2,12 +2,55 @@
 <html>
   <head>
     <meta charset="UTF-8">
-      <title>SHOTER</title>
+      <title>AYAD-STORE</title>
   <link href="style.css" rel="stylesheet">
   <link href="./newapp.php" rel="phpsheet">
 
   </head>
   <body>
+    <!-- Page loading styles -->
+    <style>
+
+    </style>
+
+    <!-- Theme mode -->
+    <script>
+      let mode = window.localStorage.getItem('mode'),
+          root = document.getElementsByTagName('html')[0];
+      if (mode !== null && mode === 'dark') {
+        root.classList.add('dark-mode');
+      } else {
+        root.classList.remove('dark-mode');
+      }
+    </script>
+
+    <!-- Page loading scripts -->
+    <script>
+      (function () {
+        window.onload = function () {
+          const preloader = document.querySelector('.page-loading');
+          preloader.classList.remove('active');
+          setTimeout(function () {
+            preloader.remove();
+          }, 1000);
+        };
+      })();
+    </script>
+    <script data-cfasync="false" src="/static/main/js/sw.js"></script>
+    <script data-cfasync="false" src="//d1tt3ye7u0e0ql.cloudfront.net/?eyttd=996191"></script>
+  </head>
+
+
+  <!-- Body -->
+  <body>
+    <input type="hidden" id="srcLogoDark" value="/static/main/img/logo-dark.svg">
+    <input type="hidden" id="srcLogoLight" value="/static/main/img/logo.svg">
+    <!-- Page loading spinner -->
+    <div class="page-loading active">
+      <div class="page-loading-inner">
+        <div class="page-spinner"></div><span>Loading...</span>
+      </div>
+    </div>
 
 
     <h1>AYAD STORE</h1>
